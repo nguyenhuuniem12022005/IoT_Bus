@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0f1c28">
+<title>Đăng nhập · SmartBus</title>
+<link rel="preload" href="/fonts/be-vietnam-pro-400-vietnamese.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="login-page">
+<main class="login-layout">
+  <section class="login-intro">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="5" y="3" width="22" height="22" rx="5"/><path d="M5 14h22M9 7.5h14"/><circle cx="10.5" cy="19.5" r="1.6"/><circle cx="21.5" cy="19.5" r="1.6"/><path d="M9 25v3.5M23 25v3.5"/></svg>
+      <span class="brand-name">SmartBus<small>An toàn trên mọi hành trình</small></span>
+    </div>
+    <h1>Mỗi hành khách.<br>Một hành trình an toàn.</h1>
+    <p class="login-lede">Theo dõi sĩ số, tiếp nhận cảnh báo và phối hợp xử lý từ một nơi.</p>
+    <ol class="route route-intro" aria-label="Các trạng thái an toàn của xe">
+      <li class="RUNNING"><span class="stop"></span><b>Đang chạy</b></li>
+      <li class="CHECKING"><span class="stop"></span><b>Kiểm tra</b></li>
+      <li class="WARNING"><span class="stop"></span><b>Cảnh báo</b></li>
+      <li class="CRITICAL"><span class="stop"></span><b>Khẩn cấp</b></li>
+      <li class="SAFE"><span class="stop"></span><b>An toàn</b></li>
+    </ol>
+    <p class="login-sources">Cảm biến cửa · Camera AI · Cảnh báo thời gian thực</p>
+  </section>
+  <section class="login-card" aria-labelledby="login-title">
+    <h2 id="login-title">Đăng nhập trung tâm điều hành</h2>
+    <p class="muted">Đăng nhập để theo dõi đội xe của bạn.</p>
+    <form id="login-form">
+      <div class="field">
+        <label for="username">Tên đăng nhập</label>
+        <input id="username" autocomplete="username" required maxlength="128" autocapitalize="none" spellcheck="false">
+      </div>
+      <div class="field">
+        <label for="password">Mật khẩu</label>
+        <input id="password" type="password" autocomplete="current-password" required maxlength="72">
+      </div>
+      <p id="login-error" class="form-error" role="alert" hidden></p>
+      <button type="submit" class="primary block">Đăng nhập</button>
+    </form>
+    <p class="small muted">Liên hệ quản trị viên nếu bạn chưa có tài khoản.</p>
+  </section>
+</main>
+<script type="module" src="/js/login.js"></script>
+</body>
+</html>

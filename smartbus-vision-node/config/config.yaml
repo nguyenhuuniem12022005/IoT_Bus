@@ -1,0 +1,30 @@
+# Định danh xe và nguồn hình (chỉ số webcam, tệp video hoặc RTSP).
+bus_id: bus01
+source: 0
+loop_video: true          # Lặp lại khi hết video.
+frame_width: 640          # Kích thước mong muốn của webcam.
+frame_height: 480
+infer_fps: 5              # Giới hạn số lần suy luận mỗi giây.
+model:
+  path: models/yolov8n.pt # Ultralytics tự tải khi chưa có model.
+  conf: 0.40              # Ngưỡng độ tin cậy.
+  iou: 0.50               # Ngưỡng loại hộp trùng.
+  imgsz: 640              # Kích thước ảnh đưa vào model.
+  device: auto            # auto | cpu | cuda:0
+roi: []                   # Đa giác chuẩn hoá; [] dùng toàn ảnh.
+counter:
+  window: 5               # Số khung tính trung vị.
+  min_change_frames: 2    # Số lần liên tiếp xác nhận số mới.
+publish:
+  count_interval_s: 1.0   # Gửi ngay cả khi số người không đổi.
+  status_interval_s: 10   # Nhịp trạng thái.
+stream: {fps: 8, width: 480, height: 360, jpeg_quality: 60, max_kb: 80, draw_boxes: true, lease_s: 30}
+preview: false            # Mặc định chạy không có cửa sổ.
+
+crossing:
+  direction: left      # Vào xe: phải -> trái; ra xe theo chiều ngược lại.
+  line: 0.5            # Vạch đứng tại 50% chiều rộng; đặt đúng giữa cửa.
+  margin: 0.04         # Chỉ đếm khi đi hết vùng đệm hai bên vạch.
+  max_distance: 0.35   # Khoảng dịch chuyển tối đa giữa hai lần nhận diện.
+  max_missed: 5        # Giữ ID qua tối đa 5 lần mất nhận diện.
+  initial_count: 0     # Số người đã có trên xe lúc khởi động node.

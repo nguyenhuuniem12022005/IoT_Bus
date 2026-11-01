@@ -1,0 +1,6 @@
+include/secrets.h
+.pio/
+.venv/
+tools/.env
+__pycache__/
+*.pyc

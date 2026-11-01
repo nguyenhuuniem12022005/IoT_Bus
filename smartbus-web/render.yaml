@@ -1,0 +1,35 @@
+services:
+  - type: web
+    name: smartbus-web
+    runtime: python
+    rootDir: smartbus-web
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: APP_ENV
+        value: production
+      - key: MQTT_TLS
+        value: "true"
+      - key: MQTT_PORT
+        value: "8883"
+      - key: MONGODB_URI
+        sync: false
+      - key: MQTT_HOST
+        sync: false
+      - key: MQTT_USERNAME
+        value: backend
+      - key: MQTT_PASSWORD
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: SEED_ADMIN_PASSWORD
+        sync: false
+      - key: SEED_OPERATOR_PASSWORD
+        sync: false
+      - key: SEED_VIEWER_PASSWORD
+        sync: false
+      - key: CORS_ORIGINS
+        sync: false

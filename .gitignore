@@ -1,0 +1,32 @@
+﻿# Local configuration and credentials
+**/.env
+**/.env.*
+!**/.env.example
+**/secrets.h
+**/secrets.local.h
+**/*.pem
+**/*.key
+
+# Python environments and caches
+**/.venv/
+**/venv/
+**/__pycache__/
+**/*.py[cod]
+**/.pytest_cache/
+**/.mypy_cache/
+**/.ruff_cache/
+
+# Firmware build output and editor state
+**/.pio/
+**/.vscode/.browse.c_cpp.db*
+**/.vscode/ipch/
+
+# Runtime output and downloaded model weights
+**/logs/*
+!**/logs/.gitkeep
+**/*.pt
+**/*.onnx
+
+# OS files
+.DS_Store
+Thumbs.db
